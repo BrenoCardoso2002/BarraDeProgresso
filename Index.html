@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        #progress {
+            width: 500px;
+            height: 20px;
+            border: none;
+            border-radius: 18px;
+        }
+        #progress_lvl {
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <progress value="0" max="100" id="progress"></progress>
+        <input type="range" id="progress_lvl" min="0" max="100" value="0">
+    </div>
+    <script>
+        const progress = document.getElementById("progress");
+        const progressLevelInput = document.getElementById("progress_lvl");
+
+        progressLevelInput.addEventListener("input", function() {
+            progress.value = progressLevelInput.value;
+        });
+    </script>
+</body>
+</html>
